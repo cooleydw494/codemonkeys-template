@@ -2,8 +2,8 @@ import argparse
 
 from monkeycore.base_entitiies.automation_class import Automation
 from monkeycore.utils.monk.theme.theme_functions import print_t
-from modules.tasks.process_file import process_file
-from modules.tasks.summarize_context import summarize_context_file
+from tasks.process_file import process_file
+from tasks.summarize_context import summarize_context_file
 
 
 class Default(Automation):

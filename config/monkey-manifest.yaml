@@ -152,10 +152,10 @@ self-help-command:
   # Main Prompts
   MAIN_PROMPT: 'Write a python script that prints an appealing summary of {the-file} and its usage via `monk {the-file}`, in the style of documentation for a CLI command. Rather than writing a script using similar functionality as {the-file}, use the provided monk command context and print_t function to generate a script that prints a help summary for {the-file}. When referring to {the-file} as a command, do not include the extension.'
   MAIN_PROMPT_ULTIMATUM: 'Return only the contents of a script that prints a helpful summary and usage explanation of {the-file}.'
-  OUTPUT_EXAMPLE_PROMPT: "Make your output similar to the following, but with as much detail and creativity as necessary to explain the command: ```{cop:~/local-git/codemonkeys/stor/context_files/list-processes-help.py}```."
+  OUTPUT_EXAMPLE_PROMPT: "Make your output similar to the following, but with as much detail and creativity as necessary to explain the command: ```{cop:~/local-git/codemonkeys/stor/context/list-processes-help.py}```."
 
   # Context
-  CONTEXT_FILE_PATH: 'ROOT_PATH/stor/context_files/self-help-context-file.md'
+  CONTEXT_FILE_PATH: 'ROOT_PATH/stor/context/self-help-context-file.md'
   CONTEXT_SUMMARY_PROMPT: null  # CONTEXT_FILE is pre-prepared summary
 
   # Output Checks
@@ -197,10 +197,10 @@ self-help-module:
   # Main Prompts
   MAIN_PROMPT: 'Write a python script that prints an appealing summary of the {the-file} module and its usage within the CodeMonkeys framework. Rather than writing a script using similar functionality as {the-file}, use the provided monk command context and print_t function to generate a script that prints a help summary for {the-file}. When referring to {the-file} as a module, do not include the extension.'
   MAIN_PROMPT_ULTIMATUM: 'Return only the contents of script that prints a helpful summary and usage explanation of {the-file}.'
-  OUTPUT_EXAMPLE_PROMPT: "Make your output similar to the following, except in the style of general python module documentation rather than a CLI command, with as much detail and creativity as necessary to explain the module: ```{cop:~/local-git/codemonkeys/stor/context_files/list-processes-help.py}```."
+  OUTPUT_EXAMPLE_PROMPT: "Make your output similar to the following, except in the style of general python module documentation rather than a CLI command, with as much detail and creativity as necessary to explain the module: ```{cop:~/local-git/codemonkeys/stor/context/list-processes-help.py}```."
 
   # Context
-  CONTEXT_FILE_PATH: 'ROOT_PATH/stor/context_files/self-help-context-file.md'
+  CONTEXT_FILE_PATH: 'ROOT_PATH/stor/context/self-help-context-file.md'
   CONTEXT_SUMMARY_PROMPT: null  # CONTEXT_FILE is pre-prepared summary
 
   # Output Checks
