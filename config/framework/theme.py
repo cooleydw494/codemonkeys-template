@@ -2,21 +2,21 @@
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  """
 
 # Improved readability for psychopaths
-LIGHT_MODE_ENABLED = False
-# Looks 👌 with very lil space, but you do you boo-boo
-MAX_TERMINAL_WIDTH = 120
+light_mode_enabled: bool = False
+# Looks 👌 with very lil space, but you do you, boo-boo
+max_terminal_width: int = 120
 
 # KEYWORDS (bold in CLI prints)
-KEYWORDS = (lambda words: sorted(words, key=len, reverse=True))([
+keywords: list = [
     'entity types', 'defs.py', 'CodeMonkeys', 'automations', 'action flags', 'entity type',
     'barrels', 'modules', 'commands', 'monkeys', 'actions', 'barrel', 'module', 'action flag', 'automation', 'command',
-    'monkey', 'types', 'cli', 'monk'])
+    'monkey', 'types', 'cli', 'monk']
 
 
 """  CLI TEXT THEMES
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  """
 
-text_themes = {
+text_themes: dict = {
     'start': {'color': 'light_green', 'light_mode': 'green', 'pre': '🚀 '},
     'done': {'color': 'light_green', 'light_mode': 'green', 'pre': '✅ '},
 

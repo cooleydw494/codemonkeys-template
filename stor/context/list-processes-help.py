@@ -1,4 +1,4 @@
-from source.utils.monk.theme.theme_functions import print_t, print_table
+from codemonkeys.utils.monk.theme_functions import print_t, print_table
 
 
 def main():
@@ -8,7 +8,7 @@ def main():
 
     print_t("monk list-processes.py", "input")
 
-    USAGE_EXAMPLES_TABLE = {
+    usage_examples_table = {
         "headers": [
             "PID",
             "Command",
@@ -29,4 +29,4 @@ def main():
         ]
     }
 
-    print_table(USAGE_EXAMPLES_TABLE, "Usage")
+    print_table(usage_examples_table, "Usage")

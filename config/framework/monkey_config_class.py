@@ -4,10 +4,12 @@ import re
 from dataclasses import dataclass
 
 from defs import MONKEYS_PATH
-from source.config_mgmt.env.env_class import ENV
-from source.config_mgmt.monkey_config.monkey_config_validations import is_prompt_key
-from source.config_mgmt.yaml_helpers import get_monkey_config_defaults
-from source.utils.monk.theme.theme_functions import print_t
+from codemonkeys.config.monkey_config.monkey_config_validations import is_prompt_key
+from codemonkeys.config.yaml_helpers import get_monkey_config_defaults
+from codemonkeys.utils.monk.theme_functions import print_t
+from codemonkeys.utils.framework_utils import import_env_class
+
+ENV = import_env_class()
 
 
 def insert_cop_file_contents(value: str) -> str:
@@ -30,6 +32,7 @@ class MonkeyConfig:
     """ MONKEY_CONFIG_PROPS - DO NOT MODIFY
         Definitions of MonkeyConfig props, generated from monkey-config-defaults. """
     # [MONKEY_CONFIG_PROPS_START]
+    from types import NoneType
     from typing import Optional
 
     from ruamel.yaml.scalarfloat import ScalarFloat
@@ -66,9 +69,9 @@ class MonkeyConfig:
         # print_t(f"Loaded MonkeyConfig: {self.__dict__}", 'info')
 
         """ MONKEY_CONFIG_VALIDATIONS - DO NOT MODIFY
-        Set MonkeyConfig props with validations, generated from monkey-config_mgmt-defaults & monkey_config_validations. """
+        Set MonkeyConfig props with validations, generated from monkey-config-defaults & monkey_config_validations. """
         # [MONKEY_CONFIG_VALIDATIONS_START]
-        from source.config_mgmt.monkey_config.monkey_config_validations import validate_str, validate_bool, validate_int, validate_float, validate_path
+        from monkeycore.config_mgmt.monkey_config.monkey_config_validations import validate_str, validate_bool, validate_int, validate_float, validate_path, validate_list_str
         self.WORK_PATH = validate_path('WORK_PATH', self.WORK_PATH)
         self.FILE_TYPES_INCLUDED = validate_str('FILE_TYPES_INCLUDED', self.FILE_TYPES_INCLUDED)
         self.FILEPATH_MATCH_EXCLUDED = validate_str('FILEPATH_MATCH_EXCLUDED', self.FILEPATH_MATCH_EXCLUDED)
@@ -101,7 +104,7 @@ class MonkeyConfig:
 
     @classmethod
     def load(cls, monkey_name: str) -> 'MonkeyConfig':
-        from source.config_mgmt.yaml_helpers import read_yaml_file
+        from codemonkeys.config.yaml_helpers import read_yaml_file
 
         if cls._instance is None:
             monkey_path = os.path.join(MONKEYS_PATH, f"{monkey_name}.yaml")
@@ -156,7 +159,7 @@ class MonkeyConfig:
         If a value is set to None, it will be maintained as None.
         If a value isn't present, it will be set to the default value.
         :param config_values: dict
-        :return: dict
+        :return dict
         """
 
         # Get dictionary of MonkeyConfig properties so we don't default to env vars that aren't properties
